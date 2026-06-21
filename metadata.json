@@ -1,0 +1,8 @@
+{
+  "name": "Eixo Fleet Management",
+  "description": "Sistema de gestão inteligente para controle de frotas, motoristas, contratos comerciais, agenda de viagens e relatórios corporativos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
