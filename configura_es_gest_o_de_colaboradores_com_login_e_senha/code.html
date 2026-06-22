@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EIXO CRM Smart - Configurações</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#e1e0ff",
+                    "secondary-container": "#ff6b6b",
+                    "on-primary-container": "#f9f6ff",
+                    "surface-dim": "#dbd8e5",
+                    "tertiary-fixed-dim": "#4ae183",
+                    "surface-container-highest": "#e4e1ed",
+                    "inverse-on-surface": "#f2effc",
+                    "on-tertiary-fixed": "#00210c",
+                    "surface-container": "#efecf9",
+                    "secondary": "#ae2f34",
+                    "tertiary": "#006733",
+                    "on-primary-fixed-variant": "#2c2cc3",
+                    "on-secondary-fixed-variant": "#8c1520",
+                    "surface-container-low": "#f5f2fe",
+                    "surface-bright": "#fcf8ff",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#008343",
+                    "surface": "#fcf8ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#6d0010",
+                    "on-tertiary-container": "#e2ffe4",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-surface-variant": "#464555",
+                    "on-surface": "#1b1b23",
+                    "surface-variant": "#e4e1ed",
+                    "outline-variant": "#c6c5d7",
+                    "on-primary-fixed": "#05006c",
+                    "inverse-surface": "#303039",
+                    "on-background": "#1b1b23",
+                    "secondary-fixed-dim": "#ffb3b0",
+                    "primary-container": "#5b5fef",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e9e6f3",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#6bfe9c",
+                    "surface-tint": "#474adb",
+                    "outline": "#767586",
+                    "inverse-primary": "#c0c1ff",
+                    "background": "#fcf8ff",
+                    "on-tertiary-fixed-variant": "#005228",
+                    "on-secondary-fixed": "#410006",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdad8",
+                    "primary": "#4143d5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "20px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "base": "8px",
+                    "xl": "32px",
+                    "container-margin": "24px",
+                    "xs": "4px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Manrope"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "headline-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F4F6FB;
+            color: #1b1b23;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .sidebar-indicator {
+            width: 4px;
+            height: 24px;
+            background-color: #5b5fef;
+            border-radius: 99px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e4e1ed;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-low min-h-screen overflow-hidden">
+<!-- SideNavBar Anchor -->
+<aside class="fixed h-full w-[260px] left-0 top-0 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-outline shadow-sm flex flex-col z-50">
+<div class="px-xl mb-xl">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Eixo</h1>
+<p class="text-label-sm text-on-surface-variant font-medium">CRM Smart</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-md py-sm flex flex-col gap-xs custom-scrollbar overflow-y-auto"><!-- Dashboard -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_41}}">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<!-- Gravar Clientes -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_79}}">
+<span class="material-symbols-outlined">save</span>
+<span class="font-label-md">Gravar Clientes</span>
+</a>
+<!-- Orçamento -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_64}}">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md">Orçamento</span>
+</a>
+<!-- Agenda de viagens -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_54}}">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-md">Agenda de viagens</span>
+</a>
+<!-- Veículos -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_43}}">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md">Veículos</span>
+</a>
+<!-- Motoristas -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_72}}">
+<span class="material-symbols-outlined">person_apron</span>
+<span class="font-label-md">Motoristas</span>
+</a>
+<!-- Gestão Comercial -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_9}}">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md">Gestão Comercial</span>
+</a>
+<!-- Relatórios -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_77}}">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label-md">Relatórios</span>
+</a>
+<!-- Configurações (Active) -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-surface-container-low text-primary border-l-4 border-primary font-bold group" href="{{DATA:SCREEN:SCREEN_52}}">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md">Configurações</span>
+</a></nav>
+<div class="mt-auto px-md pt-md border-t border-outline-variant">
+<div class="flex items-center gap-md p-sm rounded-xl hover:bg-surface-container-low transition-all cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">
+                    AD
+                </div>
+<div class="overflow-hidden">
+<p class="font-label-md text-label-md text-on-surface truncate">Admin</p>
+<p class="text-[10px] text-on-surface-variant truncate">admin@eixo.com.br</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="sticky top-0 ml-[260px] h-[64px] px-xl bg-surface dark:bg-background border-b border-outline-variant dark:border-outline flex justify-between items-center z-40">
+<div class="flex items-center flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full font-body-md focus:ring-2 focus:ring-primary-container/20" placeholder="Pesquisar configurações..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="hover:bg-surface-container dark:hover:bg-surface-variant rounded-full p-2 transition-opacity duration-150 active:opacity-70 text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-surface-container dark:hover:bg-surface-variant rounded-full p-2 transition-opacity duration-150 active:opacity-70 text-on-surface-variant" id="theme-toggle">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button class="hover:bg-surface-container dark:hover:bg-surface-variant rounded-full p-2 transition-opacity duration-150 active:opacity-70 text-on-surface-variant">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-sm"></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[260px] p-xl overflow-y-auto h-[calc(100vh-64px)] custom-scrollbar">
+<div class="max-w-7xl mx-auto space-y-xl">
+<!-- Page Header -->
+<div class="flex items-end justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Configurações</h2>
+<p class="text-on-surface-variant font-body-lg">Gerencie sua equipe e preferências globais do sistema EIXO.</p>
+</div>
+<div class="flex gap-md">
+<button class="px-xl h-[44px] flex items-center gap-sm bg-surface-container-highest text-on-surface-variant font-label-md rounded-xl hover:bg-outline-variant transition-all">
+<span class="material-symbols-outlined">restore</span>
+                        Restaurar Padrões
+                    </button>
+<button class="px-xl h-[44px] flex items-center gap-sm bg-primary text-on-primary font-label-md rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined">save</span>
+                        Salvar Alterações
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-xl">
+<!-- Section 1: Collaborator Management (Left & Main) -->
+<section class="col-span-12 lg:col-span-8 space-y-lg">
+<div class="bg-surface-container-lowest p-xl rounded-[1.5rem] shadow-[0px_4px_16px_rgba(0,0,0,0.04)] border border-outline-variant/30">
+<div class="flex items-center justify-between mb-xl">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group_add</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Gestão de Colaboradores</h3>
+</div>
+<div class="flex gap-sm">
+<button class="p-sm text-error hover:bg-error-container/20 rounded-lg transition-colors" title="Excluir Colaborador"><div class="flex items-center gap-xs px-md py-sm border border-error rounded-lg hover:bg-error-container/20 transition-colors"><span class="material-symbols-outlined">person_remove</span><span class="font-label-md">Excluir Colaborador</span></div></button>
+<button class="flex items-center gap-xs px-lg py-sm bg-primary-container text-on-primary-container rounded-lg font-label-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+                                    Incluir Colaborador
+                                </button>
+</div>
+</div>
+<!-- Form Area -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl items-end"><div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant px-xs">Nome Completo</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl p-md font-body-md focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" placeholder="Ex: João da Silva" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant px-xs">E-mail cadastrado</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl p-md font-body-md focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" placeholder="exemplo@eixo.com.br" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant px-xs">Senha cadastrada</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl p-md font-body-md focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant px-xs">Cargo</label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded-xl p-md font-body-md focus:ring-2 focus:ring-primary-container/20 transition-all outline-none appearance-none">
+<option value="">Selecione uma função</option>
+<option>Operador de Frota</option>
+<option>Analista Comercial</option>
+<option>Gerente de Logística</option>
+<option>Administrador Financeiro</option>
+</select>
+</div>
+<div class="md:col-span-2 space-y-xs">
+<label class="font-label-md text-on-surface-variant px-xs">Atribuições de acesso</label>
+<div class="flex flex-wrap gap-md p-md bg-surface-container-low border border-outline-variant rounded-xl">
+<label class="flex items-center gap-xs cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container/20" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Leitura</span>
+</label>
+<label class="flex items-center gap-xs cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container/20" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Edição</span>
+</label>
+<label class="flex items-center gap-xs cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container/20" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Administrador</span>
+</label>
+</div>
+</div></div>
+<!-- Empty State Table -->
+<div class="relative overflow-hidden border border-outline-variant rounded-xl bg-surface-container-low/30">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant"><th class="px-lg py-md w-10"><input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container/20" type="checkbox"/></th>
+<th class="px-lg py-md font-label-md text-on-surface-variant">Nome</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant">Cargo</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant">Acesso</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant text-right">Ações</th>
+</tr>
+</thead>
+<tbody><tr class=""><td class="py-20 text-center" colspan="5"><div class="flex flex-col items-center justify-center opacity-40"><span class="material-symbols-outlined text-[64px] mb-md">group_off</span><p class="font-headline-sm">Nenhum colaborador cadastrado</p><p class="font-body-md">Utilize os campos acima para adicionar sua equipe.</p></div></td></tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Section 2: General Settings (Right) -->
+<section class="col-span-12 lg:col-span-4 space-y-xl">
+<div class="bg-surface-container-lowest p-xl rounded-[1.5rem] shadow-[0px_4px_16px_rgba(0,0,0,0.04)] border border-outline-variant/30 h-full">
+<div class="flex items-center gap-md mb-xl">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed-dim flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined">tune</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Ajustes Gerais</h3>
+</div>
+<div class="space-y-xl">
+<!-- Preference 1: Language -->
+<div class="space-y-xs">
+<div class="flex items-center gap-md mb-xs">
+<span class="material-symbols-outlined text-outline">language</span>
+<p class="font-label-md text-on-surface">Idioma do Sistema</p>
+</div>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded-xl p-md font-body-md focus:ring-2 focus:ring-primary-container/20 transition-all outline-none appearance-none">
+<option selected="">Português (Brasil)</option>
+<option>Português (Portugal)</option>
+<option>Inglês (Americano)</option>
+<option>Espanhol (Espanha)</option>
+<option>Francês (França)</option>
+</select>
+</div>
+<!-- Preference 2: Theme -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline">palette</span>
+<div>
+<p class="font-label-md text-on-surface">Aparência</p>
+<p class="text-xs text-on-surface-variant">Modo Claro (Padrão)</p>
+</div>
+</div>
+<div class="flex bg-surface-container p-1 rounded-full border border-outline-variant">
+<button class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">light_mode</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</button>
+</div>
+</div>
+<!-- Preference 3: Notifications -->
+<!-- Preference 4: Security -->
+<div class="space-y-md pt-md border-t border-outline-variant/50">
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider text-[10px]">Segurança</p>
+<button class="w-full flex items-center justify-between p-md bg-surface-container-low rounded-xl border border-outline-variant/50 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">lock_reset</span>
+<span class="font-body-md">Redefinir Senha Master</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Meta -->
+<div class="pt-xl flex justify-between items-center text-on-surface-variant opacity-60">
+<p class="text-xs">EIXO CRM Smart © 2024 - Sistema de Gestão de Transportes e Logística.</p>
+<div class="flex gap-lg text-xs">
+<a class="hover:text-primary" href="#">Termos de Uso</a>
+<a class="hover:text-primary" href="#">Privacidade</a>
+<a class="hover:text-primary" href="#">Suporte Técnico</a>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple micro-interaction for theme toggle
+        const themeBtn = document.getElementById('theme-toggle');
+        let isDark = false;
+        themeBtn.addEventListener('click', () => {
+            isDark = !isDark;
+            document.documentElement.classList.toggle('dark');
+            themeBtn.querySelector('span').textContent = isDark ? 'light_mode' : 'dark_mode';
+        });
+
+        // Form interaction feedback
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label')?.classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label')?.classList.remove('text-primary');
+            });
+        });
+    </script>
+</body></html>
