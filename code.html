@@ -1,0 +1,381 @@
+<!DOCTYPE html><html class="light" lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Eixo CRM Smart - Relatórios</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#05006c",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2effc",
+                        "on-tertiary-container": "#e2ffe4",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1b23",
+                        "inverse-surface": "#303039",
+                        "tertiary-container": "#008343",
+                        "outline": "#767586",
+                        "on-tertiary-fixed-variant": "#005228",
+                        "outline-variant": "#c6c5d7",
+                        "tertiary-fixed-dim": "#4ae183",
+                        "surface-container": "#efecf9",
+                        "secondary-container": "#ff6b6b",
+                        "surface-bright": "#fcf8ff",
+                        "on-tertiary-fixed": "#00210c",
+                        "secondary": "#ae2f34",
+                        "on-secondary-fixed-variant": "#8c1520",
+                        "secondary-fixed": "#ffdad8",
+                        "on-secondary-fixed": "#410006",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e9e6f3",
+                        "on-secondary-container": "#6d0010",
+                        "secondary-fixed-dim": "#ffb3b0",
+                        "tertiary": "#006733",
+                        "surface-container-highest": "#e4e1ed",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e4e1ed",
+                        "primary": "#4143d5",
+                        "inverse-primary": "#c0c1ff",
+                        "tertiary-fixed": "#6bfe9c",
+                        "surface-dim": "#dbd8e5",
+                        "surface-tint": "#474adb",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container-low": "#f5f2fe",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fcf8ff",
+                        "on-surface-variant": "#464555",
+                        "primary-container": "#5b5fef",
+                        "on-primary-fixed-variant": "#2c2cc3",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf8ff",
+                        "on-surface": "#1b1b23",
+                        "on-primary-container": "#f9f6ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "12px",
+                        "gutter": "20px",
+                        "md": "16px",
+                        "container-margin": "24px",
+                        "xs": "4px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Manrope"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-panel {
+            background: rgba(48, 48, 57, 0.7);
+            border: 1px solid rgba(118, 117, 134, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background dark:bg-inverse-surface dark:text-inverse-on-surface selection:bg-primary-fixed">
+<div class="flex min-h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest dark:bg-surface-container-highest/10 border-r border-outline-variant dark:border-outline flex flex-col py-6 px-4 z-50 shadow-sm transition-colors duration-300">
+<!-- Brand Header -->
+<div class="px-md mb-xl">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-white flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<div class="overflow-hidden">
+<h1 class="font-headline-sm text-[18px] leading-tight font-bold text-primary dark:text-inverse-primary truncate">Eixo CRM Smart</h1>
+<p class="text-label-sm text-on-surface-variant dark:text-outline font-medium truncate uppercase tracking-wider">Fleet Management</p>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-xs overflow-y-auto"><!-- Dashboard -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest/20 hover:text-primary dark:hover:text-inverse-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_41}}">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<!-- Gravar Clientes -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest/20 hover:text-primary dark:hover:text-inverse-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_79}}">
+<span class="material-symbols-outlined">save</span>
+<span class="font-label-md">Gravar Clientes</span>
+</a>
+<!-- Orçamento -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest/20 hover:text-primary dark:hover:text-inverse-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_64}}">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md">Orçamento</span>
+</a>
+<!-- Banco de Orçamentos -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest/20 hover:text-primary dark:hover:text-inverse-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_27}}">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="font-label-md">Banco de Orçamentos</span>
+</a>
+<!-- Agenda de viagens -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest/20 hover:text-primary dark:hover:text-inverse-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_54}}">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md">Agenda de viagens</span>
+</a>
+<!-- Veículos -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest/20 hover:text-primary dark:hover:text-inverse-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_43}}">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md">Veículos</span>
+</a>
+<!-- Motoristas -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest/20 hover:text-primary dark:hover:text-inverse-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_72}}">
+<span class="material-symbols-outlined">person_apron</span>
+<span class="font-label-md">Motoristas</span>
+</a>
+<!-- Gestão Comercial -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest/20 hover:text-primary dark:hover:text-inverse-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_9}}">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md">Gestão Comercial</span>
+</a>
+<!-- Relatórios (Active) -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-surface-container-low dark:bg-primary-container text-primary dark:text-on-primary-container border-l-4 border-primary dark:border-inverse-primary font-bold group" href="{{DATA:SCREEN:SCREEN_77}}">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label-md">Relatórios</span>
+</a>
+<!-- Configurações -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest/20 hover:text-primary dark:hover:text-inverse-primary transition-colors group" href="{{DATA:SCREEN:SCREEN_52}}">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md">Configurações</span>
+</a></nav>
+<!-- Footer Profile -->
+<div class="mt-auto px-md pt-md border-t border-outline-variant dark:border-outline">
+<div class="flex items-center gap-md p-sm rounded-xl hover:bg-surface-container-low dark:hover:bg-surface-container-highest/10 transition-all cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-primary-fixed dark:bg-primary-container flex items-center justify-center text-primary dark:text-on-primary-container font-bold">
+                    AD
+                </div>
+<div class="overflow-hidden">
+<p class="font-label-md text-label-md text-on-surface dark:text-inverse-on-surface truncate">Admin</p>
+<p class="text-[10px] text-on-surface-variant dark:text-outline-variant truncate">admin@eixo.com.br</p>
+</div>
+</div></div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[260px] flex-1 min-h-screen bg-background dark:bg-background relative">
+<!-- Top App Bar -->
+<header class="h-[72px] flex justify-between items-center px-xl w-full sticky top-0 z-40 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low dark:bg-surface-variant border-none rounded-full font-body-md focus:ring-2 focus:ring-primary-container/20 dark:text-white dark:placeholder:text-outline-variant" placeholder="Pesquisar relatórios..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-sm pr-md border-r border-outline-variant/50">
+<div class="w-8 h-8 bg-primary-container/20 rounded flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<span class="font-label-md font-bold text-on-surface-variant dark:text-outline-variant">Eixo CRM Smart</span>
+</div>
+<button class="p-base hover:bg-surface-container-high dark:hover:bg-on-surface-variant rounded-full transition-all text-on-surface-variant dark:text-outline-variant" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+<button class="p-base hover:bg-surface-container-high dark:hover:bg-on-surface-variant rounded-full transition-all text-on-surface-variant dark:text-outline-variant relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface dark:border-inverse-surface"></span>
+</button>
+<button class="p-base hover:bg-surface-container-high dark:hover:bg-on-surface-variant rounded-full transition-all text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<div class="p-xl space-y-xl">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background dark:text-inverse-on-surface">Central de Relatórios</h2>
+<p class="text-on-surface-variant dark:text-outline-variant">Analise o desempenho da sua frota e indicadores comerciais com Eixo CRM Smart.</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative group">
+<button class="flex items-center gap-base px-md py-base border border-outline-variant dark:border-outline rounded-lg hover:bg-surface-container-high dark:hover:bg-on-surface-variant transition-colors text-on-surface-variant dark:text-outline-variant font-label-md">
+<span class="material-symbols-outlined text-md">file_download</span>
+<span class="">Exportar</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="absolute right-0 mt-xs w-48 bg-white dark:bg-inverse-surface border border-outline-variant dark:border-outline rounded-lg shadow-lg hidden group-hover:block z-50 overflow-hidden">
+<button class="w-full flex items-center gap-base px-md py-sm hover:bg-surface-container-low dark:hover:bg-on-surface-variant text-on-surface-variant dark:text-outline-variant font-label-md transition-colors text-left">
+<span class="material-symbols-outlined text-md">picture_as_pdf</span>
+            Exportar como PDF
+        </button>
+<button class="w-full flex items-center gap-base px-md py-sm hover:bg-surface-container-low dark:hover:bg-on-surface-variant text-on-surface-variant dark:text-outline-variant font-label-md transition-colors border-t border-outline-variant dark:border-outline text-left">
+<span class="material-symbols-outlined text-md">drive_file</span>
+            Exportar como CSV
+        </button>
+</div>
+</div>
+<button class="flex items-center gap-base px-xl py-[10px] bg-primary text-on-primary rounded-lg shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95 font-label-md font-bold">
+<span class="material-symbols-outlined">play_arrow</span>
+                            Gerar Relatório
+                        </button>
+</div>
+</div>
+<!-- Filters Section (Bento Inspired) -->
+<section class="grid grid-cols-12 gap-lg">
+<div class="col-span-12 p-lg glass-panel rounded-xl shadow-sm space-y-lg">
+<div class="flex items-center gap-base text-primary dark:text-primary-fixed mb-sm">
+<span class="material-symbols-outlined">filter_list</span>
+<span class="font-label-md font-bold uppercase tracking-wider">Parâmetros de Filtragem</span>
+</div>
+<div class="grid grid-cols-5 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant dark:text-outline-variant px-xs">Período (Data)</label>
+<div class="relative">
+<input class="w-full bg-white dark:bg-on-surface-variant/20 border border-outline-variant dark:border-outline rounded-lg px-md py-base text-body-md focus:border-primary dark:focus:border-primary-fixed focus:ring-1 focus:ring-primary dark:text-inverse-on-surface transition-all" type="date">
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant dark:text-outline-variant px-xs">Cliente</label>
+<select class="w-full bg-white dark:bg-on-surface-variant/20 border border-outline-variant dark:border-outline rounded-lg px-md py-[10px] text-body-md appearance-none focus:border-primary dark:focus:border-primary-fixed focus:ring-1 focus:ring-primary dark:text-inverse-on-surface">
+<option>Todos os clientes</option>
+<option>Logística Brasil S/A</option>
+<option>Transportes Express</option>
+<option>Agro Transports</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant dark:text-outline-variant px-xs">Veículo</label>
+<select class="w-full bg-white dark:bg-on-surface-variant/20 border border-outline-variant dark:border-outline rounded-lg px-md py-[10px] text-body-md appearance-none focus:border-primary dark:focus:border-primary-fixed focus:ring-1 focus:ring-primary dark:text-inverse-on-surface">
+<option>Todas as placas</option>
+<option>Scania R450 (ABC-1234)</option>
+<option>Volvo FH 540 (XYZ-9876)</option>
+<option>Mercedes Actros (DEF-5566)</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant dark:text-outline-variant px-xs">Motorista</label>
+<select class="w-full bg-white dark:bg-on-surface-variant/20 border border-outline-variant dark:border-outline rounded-lg px-md py-[10px] text-body-md appearance-none focus:border-primary dark:focus:border-primary-fixed focus:ring-1 focus:ring-primary dark:text-inverse-on-surface">
+<option>Todos os motoristas</option>
+<option>Carlos Oliveira</option>
+<option>Ana Maria Silva</option>
+<option>Roberto Santos</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant dark:text-outline-variant px-xs">Status Comercial</label>
+<select class="w-full bg-white dark:bg-on-surface-variant/20 border border-outline-variant dark:border-outline rounded-lg px-md py-[10px] text-body-md appearance-none focus:border-primary dark:focus:border-primary-fixed focus:ring-1 focus:ring-primary dark:text-inverse-on-surface">
+<option>Todos os status</option>
+<option>Aprovado</option>
+<option>Em Negociação</option>
+<option>Pendente</option>
+<option>Cancelado</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- Empty State Content Area -->
+<div class="flex-1 flex flex-col items-center justify-center min-h-[400px] border-2 border-dashed border-outline-variant dark:border-outline rounded-2xl bg-surface-container-low/30 dark:bg-inverse-surface/20 px-xl">
+<div class="relative mb-lg">
+<div class="w-24 h-24 bg-primary-container/30 dark:bg-primary-fixed/20 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-5xl text-primary/40 dark:text-primary-fixed/40">local_shipping</span>
+</div>
+<div class="absolute -bottom-2 -right-2 w-10 h-10 bg-white dark:bg-inverse-surface rounded-full flex items-center justify-center shadow-md border border-outline-variant dark:border-outline">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed text-xl">analytics</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background dark:text-inverse-on-surface mb-base">Pronto para analisar com Eixo?</h3>
+<p class="text-on-surface-variant dark:text-outline-variant text-body-lg text-center max-w-md">
+                        Selecione os filtros acima para especificar os dados desejados e clique em <span class="font-bold text-primary dark:text-primary-fixed">Gerar Relatório</span> para visualizar os resultados detalhados de sua gestão de frota.
+                    </p>
+<div class="grid grid-cols-3 gap-lg mt-xl w-full max-w-2xl">
+<div class="p-md bg-white dark:bg-inverse-surface border border-outline-variant dark:border-outline rounded-xl flex flex-col gap-xs group hover:border-primary dark:hover:border-primary-fixed transition-all cursor-default">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed mb-xs">query_stats</span>
+<span class="font-label-md font-bold text-on-surface dark:text-inverse-on-surface">Produtividade</span>
+<span class="text-[11px] text-on-surface-variant dark:text-outline-variant">Km rodados e tempo de rota.</span>
+</div>
+<div class="p-md bg-white dark:bg-inverse-surface border border-outline-variant dark:border-outline rounded-xl flex flex-col gap-xs group hover:border-primary dark:hover:border-primary-fixed transition-all cursor-default">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed mb-xs">payments</span>
+<span class="font-label-md font-bold text-on-surface dark:text-inverse-on-surface">Financeiro</span>
+<span class="text-[11px] text-on-surface-variant dark:text-outline-variant">Receita por viagem e custos fixos.</span>
+</div>
+<div class="p-md bg-white dark:bg-inverse-surface border border-outline-variant dark:border-outline rounded-xl flex flex-col gap-xs group hover:border-primary dark:hover:border-primary-fixed transition-all cursor-default">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed mb-xs">group</span>
+<span class="font-label-md font-bold text-on-surface dark:text-inverse-on-surface">Comercial</span>
+<span class="text-[11px] text-on-surface-variant dark:text-outline-variant">Conversão de orçamentos e leads.</span>
+</div>
+</div>
+</div>
+<!-- Atmospheric Background Shader Placeholder (Subtle) -->
+<div class="fixed bottom-0 right-0 w-[400px] h-[400px] pointer-events-none opacity-20 z-0">
+<div class="absolute inset-0 bg-gradient-to-tl from-primary/30 to-transparent blur-[120px] rounded-full"></div>
+</div>
+</div>
+</main>
+</div>
+<!-- Micro-interaction Scripts -->
+<script>
+        // Handle Generate Report button click
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.innerText.includes('Gerar Relatório')) {
+                    const emptyState = document.querySelector('.min-h-\\[400px\\]');
+                    emptyState.innerHTML = `
+                        <div class="flex flex-col items-center gap-md">
+                            <div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                            <p class="font-label-md text-primary animate-pulse">Eixo CRM Smart processando grandes volumes de dados...</p>
+                        </div>
+                    `;
+                    setTimeout(() => {
+                        window.location.reload(); // Reset state for demonstration
+                    }, 2000);
+                }
+            });
+        });
+
+        // Focus effects for inputs
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+                input.parentElement.style.transition = 'transform 0.2s ease-out';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+
+
+
+
+
+
+</body></html>
